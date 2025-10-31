@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách xe - Auto 69</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="btl.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="btl.html">
+          <i class="bi bi-car-front-fill me-2"></i>
+          Auto69
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="btl.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="listing.html">Danh sách xe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Liên hệ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Admin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="listing-header py-5">
+      <div class="container text-center">
+        <h1 class="display-5 fw-bold">Xe đang bán</h1>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <section class="search-bar p-4 rounded shadow-sm mb-5">
+        <form class="row g-3 align-items-end">
+          <div class="col-md-4">
+            <label for="brand" class="form-label fw-bold">Hãng xe</label>
+            <select class="form-select" id="brand">
+              <option selected>Tất cả hãng xe</option>
+              <option value="toyota">Toyota</option>
+              <option value="honda">Honda</option>
+              <option value="ford">Ford</option>
+              <option value="hyundai">Hyundai</option>
+              <option value="mazda">Mazda</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="price" class="form-label fw-bold">Khoảng giá</label>
+            <select class="form-select" id="price">
+              <option selected>Tất cả mức giá</option>
+              <option value="1">Dưới 500 triệu</option>
+              <option value="2">500 - 800 triệu</option>
+              <option value="3">Trên 800 triệu</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="bi bi-search me-2"></i>
+              Tìm kiếm
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="car-listings">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/VRG-S-3R3-1.png"
+                class="card-img-top car-card-img"
+                alt="Xe Vios"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Toyota Vios 1.5G</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  530.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2023 | Đã đi 10.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/city-grey.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe City"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Honda City RS</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  590.000.000 VND
+                </p>
+                <p class="card-text text-muted">2023 | Mới 100% | Số tự động</p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/ford-ranger-wildtrak-mau-den-icon-fordlongbien.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Ranger"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Ford Ranger Wildtrak</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  850.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2022 | Đã đi 30.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/hyundai-accent.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Accent"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyundai Accent 1.4 AT</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  500.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2022 | Đã đi 25.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/mazda3.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Mazda 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mazda 3 Sport 1.5L</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  680.000.000 VND
+                </p>
+                <p class="card-text text-muted">2023 | Mới 100% | Số tự động</p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/creta.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Creta"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyundai Creta Cao cấp</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  700.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2023 | Đã đi 5.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/everest.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Ford Everest"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Ford Everest Titanium</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  1.200.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2023 | Đã đi 15.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/crv-g.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Honda CR-V"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Honda CR-V G</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  950.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2023 | Đã đi 5.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/fortuner.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Toyota Fortuner"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Toyota Fortuner Legender</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  1.100.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2022 | Đã đi 20.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/tucsson.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Hyundai Tucson"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyundai Tucson 1.6 Turbo</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  890.000.000 VND
+                </p>
+                <p class="card-text text-muted">2023 | Mới 100% | Số tự động</p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/cx-5.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Mazda CX-5"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mazda CX-5 Premium</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  820.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2023 | Đã đi 12.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/seltos.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Kia Seltos"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Kia Seltos 1.4 Premium</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  650.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2022 | Đã đi 22.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/expander.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Mitsubishi Xpander"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mitsubishi Xpander Cross</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  680.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2023 | Đã đi 8.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/vf8.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe VinFast VF 8"
+              />
+              <div class="card-body">
+                <h5 class="card-title">VinFast VF 8 Eco</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  900.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2023 | Đã đi 10.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/toyota-corolla-cross.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Toyota Corolla Cross"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Toyota Corolla Cross 1.8V</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  750.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2022 | Đã đi 30.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/TERRITORY-TITANIUM.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Ford Territory"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Ford Territory Titanium</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  810.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2023 | Đã đi 7.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/hrv.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Honda HR-V"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Honda HR-V RS</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  830.000.000 VND
+                </p>
+                <p class="card-text text-muted">2023 | Mới 100% | Số tự động</p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/santafe.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Hyundai Santa Fe"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyundai Santa Fe Cao cấp</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  1.050.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2022 | Đã đi 35.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/mazda6.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Mazda 6"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mazda 6 2.0 Premium</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  780.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2022 | Đã đi 19.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/k3-xam.jpg"
+                class="card-img-top car-card-img"
+                alt="Xe Kia K3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Kia K3 1.6 Premium</h5>
+                <p class="card-text fw-bold text-primary fs-5">
+                  610.000.000 VND
+                </p>
+                <p class="card-text text-muted">
+                  2023 | Đã đi 14.000 km | Số tự động
+                </p>
+                <a href="detail.html" class="btn btn-outline-primary"
+                  >Xem chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Page navigation" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
+                >Trước</a
+              >
+            </li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Sau</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white p-4 mt-5">
+      <div class="container text-center">
+        <p>&copy; 2025 Salon Ô Tô. Mọi quyền được bảo lưu.</p>
+        <p>Địa chỉ: 123 Đường ABC, Quận 1, TP. HCM | Email: info@salon.vn</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
