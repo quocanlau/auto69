@@ -48,11 +48,90 @@
       </div>
     </nav>
 
+    <header class="hero-section shadow-lg d-flex align-items-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h1 class="display-3 fw-bold text-shadow">Tìm Kiếm Chiếc Xe Mơ Ước</h1>
+        <p class="lead text-shadow-light mb-4">
+          Công cụ tìm kiếm thông minh giúp bạn tìm xe nhanh nhất tại Auto69.
+        </p>
 
+        <form
+          class="search-bar p-4 rounded-3 shadow-lg"
+          action="litsing2.html"
+          method="GET"
+        >
+          <div class="row g-3 align-items-end">
+            <div class="col-lg-3 col-md-6">
+              <label for="searchBrand" class="form-label"
+                >Chọn hãng xe</label
+              >
+              <select
+                id="searchBrand"
+                name="brand"
+                class="form-select form-select-lg"
+                aria-label="Chọn hãng xe"
+              >
+                <option value="" selected>Tất cả hãng</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Kia">Kia</option>
+                <option value="Mazda">Mazda</option>
+              </select>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <label for="searchPrice" class="form-label"
+                >Chọn mức giá</label
+              >
+              <select
+                id="searchPrice"
+                name="price"
+                class="form-select form-select-lg"
+                aria-label="Chọn mức giá"
+              >
+                <option value="" selected>Tất cả mức giá</option>
+                <option value="duoi-300">Dưới 300 triệu</option>
+                <option value="300-500">300 - 500 triệu</option>
+                <option value="500-700">500 - 700 triệu</option>
+                <option value="tren-700">Trên 700 triệu</option>
+              </select>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <label for="searchType" class="form-label">Chọn loại xe</label>
+              <select
+                id="searchType"
+                name="type"
+                class="form-select form-select-lg"
+                aria-label="Chọn loại xe"
+              >
+                <option value="" selected>Tất cả loại xe</option>
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+                <option value="Bantam">Bán tải</option>
+                <option value="Hatchback">Hatchback</option>
+              </select>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <button type="submit" class="btn btn-primary btn-lg w-100">
+                <i class="bi bi-search me-2"></i> Tìm kiếm
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
     <main class="container my-5">
       
       <section class="featured-listings-carousel mb-5">
-        <h2 class="text-center mb-4 text-white fw-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Xe nổi bật</h2>
+        <h2 class="text-center mb-4 text: #212529 fw-bold" style="text-shadow: 1px 1px 2px gray;">Xe nổi bật</h2>
         <div
           id="featuredCarousel"
           class="carousel slide shadow-lg rounded overflow-hidden"
@@ -146,6 +225,125 @@
         </div>
       </section>
 
+      <section class="latest-listings my-5">
+        <h2 class="text-center mb-4 fw-bold" style="color: #333; text-shadow: 1px 1px 2px #fff;">
+          Xe Mới Về
+        </h2>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/viosbtl.jpg" class="card-img-top car-card-img"
+                alt="Toyota Vios"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Toyota Vios 1.5G</h5>
+                <p class="card-text text-muted">Sedan | 2023 | 10.000 km</p>
+                <h5 class="card-text text-primary fw-bold mb-3">530.000.000 VND</h5>
+                <div class="mt-auto">
+                  <a href="detail.html" class="btn btn-outline-primary w-100"
+                    >Xem chi tiết</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/citybtl.jpg" class="card-img-top car-card-img"
+                alt="Honda City"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Honda City RS</h5>
+                <p class="card-text text-muted">Sedan | 2023 | Mới 100%</p>
+                <h5 class="card-text text-primary fw-bold mb-3">590.000.000 VND</h5>
+                <div class="mt-auto">
+                  <a href="detail.html" class="btn btn-outline-primary w-100"
+                    >Xem chi tiết</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="img/wildtrakbtl.jpg" class="card-img-top car-card-img"
+                alt="Ford Ranger"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Ford Ranger Wildtrak</h5>
+                <p class="card-text text-muted">Bán tải | 2022 | 30.000 km</p>
+                <h5 class="card-text text-primary fw-bold mb-3">850.000.000 VND</h5>
+                <div class="mt-auto">
+                  <a href="detail.html" class="btn btn-outline-primary w-100"
+                    >Xem chi tiết</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-3">
+          <a href="litsing2.html" class="btn btn-dark btn-lg">Xem tất cả xe</a>
+        </div>
+      </section>
+      <section class="our-services my-5 p-5 rounded" style="background-color: rgba(255, 255, 255, 0.9);">
+        <h2 class="text-center mb-5 fw-bold">Tại Sao Chọn Auto69?</h2>
+        <div class="row text-center">
+          <div class="col-md-4 mb-4">
+            <i class="bi bi-patch-check-fill fs-1 text-primary mb-3"></i>
+            <h4 class="fw-bold">Kiểm Định Chất Lượng</h4>
+            <p class="text-muted">
+              Mỗi chiếc xe đều trải qua quy trình 176 điểm kiểm tra nghiêm ngặt.
+            </p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="bi bi-wallet2 fs-1 text-primary mb-3"></i>
+            <h4 class="fw-bold">Hỗ Trợ Trả Góp</h4>
+            <p class="text-muted">
+              Lãi suất ưu đãi, thủ tục nhanh gọn, hỗ trợ vay lên đến 70% giá trị xe.
+            </p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="bi bi-shield-lock-fill fs-1 text-primary mb-3"></i>
+            <h4 class="fw-bold">Bảo Hành Uy Tín</h4>
+            <p class="text-muted">
+              Bảo hành 1 năm hoặc 12.000km cho động cơ và hộp số.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="testimonials my-5">
+        <h2 class="text-center mb-4 fw-bold" style="color: #333; text-shadow: 1px 1px 2px #fff;">
+          Khách Hàng Nói Gì?
+        </h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <blockquote class="blockquote p-4 rounded shadow-sm" style="background-color: rgba(255, 255, 255, 0.9);">
+              <p class="mb-3">
+                "Dịch vụ tuyệt vời! Tôi đã tìm được chiếc xe ưng ý tại Auto69 với
+                giá rất hợp lý. Các bạn nhân viên tư vấn rất nhiệt tình."
+              </p>
+              <footer class="blockquote-footer">Anh Minh <cite title="Source Title">Hà Nội</cite></footer>
+            </blockquote>
+          </div>
+          <div class="col-md-6 mb-4">
+            <blockquote class="blockquote p-4 rounded shadow-sm" style="background-color: rgba(255, 255, 255, 0.9);">
+              <p class="mb-3">
+                "Xe chất lượng, giấy tờ minh bạch. Tôi hoàn toàn yên tâm khi mua xe
+                ở đây và sẽ giới thiệu cho bạn bè."
+              </p>
+              <footer class="blockquote-footer">Chị Lan <cite title="Source Title">Hải Phòng</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
       <section class="about-us my-5 p-5 rounded" style="background-color: rgba(255, 255, 255, 0.9);">
         <div class="row align-items-center">
           <div class="col-lg-6">

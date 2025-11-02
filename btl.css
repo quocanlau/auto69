@@ -1,17 +1,77 @@
 /* =======================================
    CSS TRANG CHỦ (INDEX)
    ======================================= */
+/* Hero Section - Cập nhật để có ảnh nền và lớp phủ */
 .hero-section {
-  background: url("https://placehold.co/1920x600/333/FFF?text=Salon+O+To")
-    no-repeat center center;
-  background-size: cover;
-  height: 60vh;
+  position: relative; /* Quan trọng để lớp phủ hoạt động */
+  height: 600px; /* Chiều cao tùy chỉnh */
+  background: url('img/hero-background.jpg') no-repeat center center/cover; /* Đặt ảnh nền ở đây */
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  text-align: center;
+  overflow: hidden; /* Đảm bảo mọi thứ nằm trong bounds */
 }
 
+/* Lớp phủ (overlay) để làm mờ ảnh nền và làm nổi bật chữ */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu đen với độ mờ 50% */
+  z-index: 1; /* Đảm bảo lớp phủ nằm dưới nội dung */
+}
+
+/* Đảm bảo nội dung nằm trên lớp phủ */
+.hero-section > .container {
+  position: relative;
+  z-index: 2; /* Cao hơn lớp phủ */
+}
+
+/* Các style khác giữ nguyên hoặc tối ưu */
+.hero-section .text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section .text-shadow-light {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Search bar bên trong hero section */
+.search-bar {
+  background-color: rgba(0, 0, 0, 0.7); /* Nền tối mờ cho search bar */
+  padding: 25px; /* Tăng padding để rộng rãi hơn */
+  border-radius: 10px;
+  color: white; /* Chữ trắng cho label */
+  /* Thêm hiệu ứng nổi bật */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.search-bar .form-label {
+  color: #f8f9fa; /* Màu trắng nhạt cho label */
+  font-weight: bold;
+}
+
+.search-bar .form-select-lg,
+.search-bar .btn-lg {
+  height: 55px; /* Tăng chiều cao cho các input và nút */
+  font-size: 1.1rem;
+}
+
+.search-bar .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar .btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
 /* =======================================
    CSS DÙNG CHUNG (GLOBAL)
    ======================================= */
@@ -24,7 +84,7 @@
 /* 1. ĐẶT ẢNH NỀN CHO TOÀN BỘ TRANG */
 body {
   /* THAY LINK ẢNH CỦA BẠN VÀO ĐÂY */
-  background-image: url("https://www.robbreport.com.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ftd-robb-media%2F2020%2F09%2FLamborghini-Urus-Graphite-Capsule-3.jpg&w=2048&q=75");
+  background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60");
   background-size: cover; /* Phủ kín trang */
   background-repeat: no-repeat; /* Không lặp lại */
   background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn */
