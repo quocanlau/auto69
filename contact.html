@@ -127,9 +127,11 @@
                     <h4 class="h5 mt-4 mb-3">Bản đồ</h4>
                     <div class="ratio ratio-16x9">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1132800901!2d105.8007613759628!3d21.02812698062074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab6d140653d9%3A0x867711481363a034!2zU+G7kSAzIFDEgC4gQ-G6p3UgR2nhuqV5LCBRdeG7kW4gQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1730411674485!5m2!1svi!2s"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.096814185261!2d105.8009665759907!3d21.0288228806209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab42436d8869%3A0x6a2631f4c75908b7!2zUy4zIEPhuqd1IEdp4bqleSwgUXVhbiBIb2EsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1699038203523!5m2!1svi!2s" 
+                            width="100%" 
+                            height="100%" 
                             style="border:0; border-radius: .375rem;" 
-                            allowfullscreen=""
+                            allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
@@ -142,12 +144,38 @@
 
     <footer class="bg-dark text-white p-4 mt-5">
       <div class="container text-center">
-        <p>&copy; 2025 Auto69. Mọi quyền được bảo lưu.</p>
+        <p>© 2025 Auto69. Mọi quyền được bảo lưu.</p>
         <p>Địa chỉ: số 3 Cầu Giấy, TP Hà Nội | Email: info@auto69.vn</p>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="btl.js"></script>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const contactForm = document.getElementById("contactForm");
+        const formSuccessAlert = document.getElementById("formSuccess");
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (contactForm.checkValidity()) {
+              // Trong thực tế, bạn sẽ gửi dữ liệu đi (ví dụ: dùng fetch)
+              // Ở đây chúng ta chỉ mô phỏng việc gửi thành công
+              
+              // Ẩn form và hiển thị thông báo
+              document.getElementById("contactContent").style.display = "none";
+              formSuccessAlert.classList.remove("d-none");
+              window.scrollTo(0, 0); // Cuộn lên đầu trang
+              
+            } else {
+              contactForm.classList.add("was-validated");
+            }
+          }, false);
+        }
+      });
+    </script>
 </body>
 </html>
