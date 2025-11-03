@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liên hệ - Auto 69</title>
+    <title>Liên hệ - Auto69</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <link rel="stylesheet" href="btl.css">
 </head>
 <body>
@@ -15,11 +16,12 @@
         <div class="container">
             <a class="navbar-brand fw-bold" href="btl.html">
                 <i class="bi bi-car-front-fill me-2"></i>
-                AUTO 69
+                Auto69
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 
                 <ul class="navbar-nav me-auto">
@@ -32,11 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="contact.html">Liên hệ</a>
                     </li>
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="service.html">Dịch vụ</a>
-                        </li>
-                    </ul>
+                    <li class="nav-item">
+                         <a class="nav-link" href="service.html">Dịch vụ</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,28 +50,57 @@
     </header>
 
     <main class="container my-5">
-        <div class="row g-4">
+        
+        <div class="alert alert-success d-none" id="formSuccess" role="alert">
+            <strong>Gửi thành công!</strong> Cảm ơn bạn đã liên hệ, chúng tôi sẽ phản hồi sớm nhất.
+        </div>
+        
+        <div class="row g-4" id="contactContent">
 
             <div class="col-md-7">
                 <div class="card h-100 p-4">
                     <h3 class="mb-3">Gửi tin nhắn cho Auto 69</h3>
-                    <form id="contactForm">
+                    
+                    <form id="contactForm" novalidate>
+                        
                         <div class="mb-3">
                             <label for="contactName" class="form-label">Họ và tên</label>
-                            <input type="text" class="form-control" id="contactName" required>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                                <input type="text" class="form-control" id="contactName" required>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập họ và tên.
+                                </div>
+                            </div>
                         </div>
+
                         <div class="mb-3">
                             <label for="contactEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="contactEmail" required>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                                <input type="email" class="form-control" id="contactEmail" required>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập email hợp lệ.
+                                </div>
+                            </div>
                         </div>
+
                         <div class="mb-3">
-                            <label for="contactPhone" class="form-label">Số điện thoại</label>
-                            <input type="tel" class="form-control" id="contactPhone">
+                            <label for="contactPhone" class="form-label">Số điện thoại (Tùy chọn)</label>
+                             <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                                <input type="tel" class="form-control" id="contactPhone">
+                            </div>
                         </div>
+
                         <div class="mb-3">
                             <label for="contactMessage" class="form-label">Nội dung</label>
                             <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                            <div class="invalid-feedback">
+                                Vui lòng nhập nội dung tin nhắn.
+                            </div>
                         </div>
+                        
                         <button type="submit" class="btn btn-primary btn-lg">Gửi tin nhắn</button>
                     </form>
                 </div>
@@ -83,7 +112,7 @@
                     <ul class="list-unstyled fs-5">
                         <li class="mb-3">
                             <i class="bi bi-geo-alt-fill text-primary me-2"></i>
-                            Số 123, Đường Cầu Giấy, Thành phố Hà Nội
+                            số 3 Cầu Giấy, TP Hà Nội
                         </li>
                         <li class="mb-3">
                             <i class="bi bi-telephone-fill text-primary me-2"></i>
@@ -91,14 +120,14 @@
                         </li>
                         <li class="mb-3">
                             <i class="bi bi-envelope-fill text-primary me-2"></i>
-                            muabanxe@auto69.vn
+                            info@auto69.vn
                         </li>
                     </ul>
 
                     <h4 class="h5 mt-4 mb-3">Bản đồ</h4>
                     <div class="ratio ratio-16x9">
                         <iframe 
-                            src="https://www.google.com/maps/search/L%C3%B4+A,+D13,+khu+%C4%91%C3%B4+th%E1%BB%8B+m%E1%BB%9Bi+C%E1%BA%A7u+Gi%E1%BA%A5y,+ph%C6%B0%E1%BB%9Dng+D%E1%BB%8Bch+V%E1%BB%8Dng,+qu%E1%BA%ADn+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i/@21.0242826,105.7950536,1352m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI1MTAyNy4wIKXMDSoASAFQAw%3D%3D"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1132800901!2d105.8007613759628!3d21.02812698062074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab6d140653d9%3A0x867711481363a034!2zU+G7kSAzIFDEgC4gQ-G6p3UgR2nhuqV5LCBRdeG7kW4gQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1730411674485!5m2!1svi!2s"
                             style="border:0; border-radius: .375rem;" 
                             allowfullscreen=""
                             loading="lazy" 
@@ -108,16 +137,17 @@
                 </div>
             </div>
             
-            </div>
+        </div>
     </main>
 
     <footer class="bg-dark text-white p-4 mt-5">
-        <div class="container text-center">
-            <p>© 2025 Auto 69. Mọi quyền được bảo lưu.</p>
-            <p>Địa chỉ: Đường Cầu Giấy, Thành phố Hà Nội | Email: info@auto69.vn</p>
-        </div>
+      <div class="container text-center">
+        <p>&copy; 2025 Auto69. Mọi quyền được bảo lưu.</p>
+        <p>Địa chỉ: số 3 Cầu Giấy, TP Hà Nội | Email: info@auto69.vn</p>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="btl.js"></script>
 </body>
 </html>
