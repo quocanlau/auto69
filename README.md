@@ -1,0 +1,4 @@
+BÀI TẬP LỚN NHÓM 8 LỚP CNTTVA2 K65 
+GV: Lại Mạnh Dũng
+CHỦ ĐỀ: QUẢN LÍ & MUA BÁN XE Ô TÔ
+THÀNH VIÊN: LẦU QUỐC AN & PHẠM TIẾN DŨNG & PHÙNG QUANG MINH
