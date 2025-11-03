@@ -1,72 +1,77 @@
-/* =======================================
-   THEME 5: TECH FUTURE
-   ======================================= */
 
-/* 1. Nền xanh Navy đậm, bỏ ảnh nền */
 body {
-  background-color: #0F172A; /* Nền xanh đậm (Slate 900) */
-  background-image: none; /* Tắt ảnh nền */
-  color: #E2E8F0; /* Chữ xám-xanh nhạt (Slate 200) */
+  background-color: #f8f9fa; 
+  background-image: none; 
+  color: #212529; 
 }
 
-/* 2. Navbar và Footer màu xanh đậm (nhạt hơn body) */
+
 .navbar.bg-dark,
 footer.bg-dark {
-  background-color: #1E293B !important; /* Slate 800 */
+  background-color: #1E293B !important; 
   backdrop-filter: none;
-  border-bottom: 1px solid #334155; /* Slate 700 */
+  border-bottom: 1px solid #334155;
 }
 footer.bg-dark {
   border-bottom: none;
   border-top: 1px solid #334155;
 }
 
-/* 3. Thanh tìm kiếm (nếu dùng) */
+
 .search-bar {
-  background-color: rgba(30, 41, 59, 0.8); /* Slate 800 mờ */
-  border: 1px solid #334155;
-  backdrop-filter: blur(5px);
+  background-color: #ffffff; 
+  border: 1px solid #dee2e6; 
+  backdrop-filter: none; 
 }
 .search-bar .form-label {
-  color: #E2E8F0;
+  color: #212529; 
 }
 
-/* 4. Thẻ xe (Card) nền tối */
-.card.h-100 {
-  background-color: #1E293B; /* Slate 800 */
+
+.card,
+.blockquote {
+  background-color: #ffffff;
   backdrop-filter: none;
-  border: 1px solid #334155; /* Slate 700 */
+  border: 1px solid #dee2e6; 
+  color: #212529;
 }
-.card.h-100:hover {
-  border-color: #06B6D4; /* Viền cyan khi hover */
+.card.h-100:hover,
+.card:hover {
+  border-color: #06b6d4; 
 }
 .card .card-title {
-  color: #ffffff; /* Tiêu đề trắng */
+  color: #212529; 
 }
 .card .card-text.text-muted {
-  color: #94A3B8 !important; /* Slate 400 */
+  color: #6c757d !important;
 }
 
-/* 5. Màu nhấn chính (Xanh Cyan) */
+
 .text-primary,
 .card-text.h5.text-primary {
-  color: #06B6D4 !important; /* Màu Cyan 500 */
+  color: #06b6d4 !important; 
 }
 
 .btn-primary {
-  background-color: #06B6D4;
-  border-color: #06B6D4;
-  color: #0F172A; /* Chữ tối trên nền sáng */
+  background-color: #06b6d4;
+  border-color: #06b6d4;
+  color: #0f172a; 
   font-weight: bold;
 }
 .btn-primary:hover {
-  background-color: #0891B2;
-  border-color: #0E7490;
-  color: #0F172A;
+  background-color: #0891b2;
+  border-color: #0e7490;
+  color: #0f172a;
 }
 
-/* 6. Hero section (Trang chủ) */
+
 .hero-section .search-bar {
-  background-color: rgba(15, 23, 42, 0.8); /* Nền body mờ */
-  border: 1px solid #334155;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border: 1px solid #dee2e6;
+}
+
+.car-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+  object-fit: cover;    
 }

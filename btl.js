@@ -1,14 +1,9 @@
-// js/btl.js
-// Logic chính cho trang quản lý (inventory)
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Logic cho trang Quản lý Kho xe (Inventory) ---
   const carForm = document.getElementById("carForm");
   const carCardContainer = document.querySelector(".car-list-container");
   const STORAGE_KEY = "myCarInventory";
   
-  // Chỉ chạy code inventory nếu tìm thấy form
   if (carForm) {
-    // [CHÚ THÍCH] Lấy các phần tử của form
     const carNameInput = document.getElementById("carName");
     const carBrandInput = document.getElementById("carBrand");
     const carPriceInput = document.getElementById("carPrice");
@@ -16,25 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const carImageInput = document.getElementById("carImage");
     const formSubmitButton = carForm.querySelector('button[type="submit"]');
 
-    // [CHÚ THÍCH] Lấy các phần tử của Modal Xóa
     const deleteModalElement = document.getElementById('deleteCarModal');
-    // Kiểm tra modal có tồn tại không
     let deleteModal = null;
     if (deleteModalElement) {
        deleteModal = new bootstrap.Modal(deleteModalElement);
     }
     const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
 
-    // [CHÚ THÍCH] Biến để quản lý trạng thái Sửa và ID của xe cần xóa
     let isEditMode = false;
     let carToEditId = null;
     let carToDeleteId = null;
 
-    // --- HÀM QUẢN LÝ DỮ LIỆU ---
     const getCars = () => {
       const cars = JSON.parse(localStorage.getItem(STORAGE_KEY));
       if (!cars || cars.length === 0) {
-        const sampleCars = generateSampleCars(); // Hàm này cần được định nghĩa
+        const sampleCars = generateSampleCars();
         saveCars(sampleCars);
         return sampleCars;
       }
@@ -45,12 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(cars));
     };
     
-    // [CHÚ THÍCH] Hàm tìm một xe theo ID
     const getCarById = (id) => {
         return getCars().find(car => car.id === id);
     };
 
-    // Hàm tạo dữ liệu mẫu (Bạn cần giữ lại hoặc định nghĩa hàm này)
     const generateSampleCars = () => {
         return [
             { id: 1, name: "Toyota Vios", brand: "Toyota", price: 530000000, status: "Còn hàng", imageUrl: "https://vcdn1-vnexpress.vnecdn.net/2023/04/28/Vios-G-2023-trang-jpg-16826660-3277-1110-1682666141.jpg", dateAdded: "20/10/2025" },
@@ -58,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ];
     };
 
-    // --- HÀM HIỂN THỊ (RENDER) ---
     const renderCarAsCard = (car) => {
       let statusClass = "";
       switch (car.status) {
@@ -106,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
       cars.forEach(renderCarAsCard);
     };
 
-    // --- [CHÚ THÍCH] CÁC HÀM MỚI CHO VIỆC SỬA ---
     const populateFormForEdit = (car) => {
       carNameInput.value = car.name;
       carBrandInput.value = car.brand;
@@ -133,7 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
       formSubmitButton.classList.add('btn-primary');
     };
 
-    // --- CÁC HÀM XỬ LÝ SỰ KIỆN ---
     const handleFormSubmit = (e) => {
       e.preventDefault(); 
 
@@ -155,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const cars = getCars();
 
       if (isEditMode) {
-        // --- Logic CẬP NHẬT XE ---
         const carIndex = cars.findIndex(car => car.id === carToEditId);
         if (carIndex > -1) {
             const updatedCar = {
@@ -171,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Cập nhật xe thành công!");
         }
       } else {
-        // --- Logic THÊM XE (Giữ nguyên) ---
         const newCar = {
           id: Date.now(),
           name,
@@ -219,7 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // --- KHỞI CHẠY (Chỉ chạy nếu các phần tử tồn tại) ---
     carForm.addEventListener("submit", handleFormSubmit);
     
     if (carCardContainer) {
@@ -230,12 +213,8 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmDeleteBtn.addEventListener('click', handleDeleteConfirm);
     }
     
-    // Render chỉ khi có container
     if(carCardContainer) {
         renderAllCars(); 
     }
   }
-
-  // --- Logic cho các trang khác (nếu có) ---
-  console.log("btl.js đã tải.");
 });
