@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản Admin - Auto69</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="btl.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-header p-0">
+                        <ul class="nav nav-tabs nav-fill" id="authTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-panel" type="button" role="tab">
+                                    Đăng nhập
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-panel" type="button" role="tab">
+                                    Đăng ký
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-body p-4 p-md-5 tab-content" id="authTabsContent">
+                        
+                        <div class="tab-pane fade show active" id="login-panel" role="tabpanel">
+                            <h3 class="text-center fw-bold mb-4">
+                                <i class="bi bi-car-front-fill me-2 text-primary"></i>
+                                Admin Login
+                            </h3>
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="login-username" class="form-label">Tên đăng nhập</label>
+                                    <input type="text" class="form-control" id="login-username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="login-password" class="form-label">Mật khẩu</label>
+                                    <input type="password" class="form-control" id="login-password" required>
+                                </div>
+                                
+                                <div class="alert alert-danger d-none mt-3" id="loginError">
+                                    Sai tên đăng nhập hoặc mật khẩu!
+                                </div>
+                                
+                                <div class="d-grid mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">Đăng nhập</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="register-panel" role="tabpanel">
+                            <h3 class="text-center fw-bold mb-4">Tạo tài khoản</h3>
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label for="reg-username" class="form-label">Tên đăng nhập</label>
+                                    <input type="text" class="form-control" id="reg-username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="reg-password" class="form-label">Mật khẩu</label>
+                                    <input type="password" class="form-control" id="reg-password" required>
+                                </div>
+                                
+                                <div class="alert alert-danger d-none mt-3" id="registerError">
+                                    Lỗi...
+                                </div>
+                                <div class="alert alert-success d-none mt-3" id="registerSuccess">
+                                    Đăng ký thành công! Vui lòng chuyển qua tab Đăng nhập.
+                                </div>
+                                
+                                <div class="d-grid mt-4">
+                                    <button type="submit" class="btn btn-outline-primary btn-lg">Đăng ký</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                         <a href="btl.html" class="small">&larr; Quay về trang chủ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

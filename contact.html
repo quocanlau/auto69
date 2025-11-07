@@ -146,6 +146,7 @@
       <div class="container text-center">
         <p>© 2025 Auto69. Mọi quyền được bảo lưu.</p>
         <p>Địa chỉ: số 3 Cầu Giấy, TP Hà Nội | Email: info@auto69.vn</p>
+        <p class="mt-2"><a href="admin.html" class="text-secondary small">Quản lý Admin</a></p>
       </div>
     </footer>
 
@@ -162,13 +163,11 @@
             event.stopPropagation();
 
             if (contactForm.checkValidity()) {
-              // Trong thực tế, bạn sẽ gửi dữ liệu đi (ví dụ: dùng fetch)
-              // Ở đây chúng ta chỉ mô phỏng việc gửi thành công
               
-              // Ẩn form và hiển thị thông báo
+              
               document.getElementById("contactContent").style.display = "none";
               formSuccessAlert.classList.remove("d-none");
-              window.scrollTo(0, 0); // Cuộn lên đầu trang
+              window.scrollTo(0, 0);  
               
             } else {
               contactForm.classList.add("was-validated");
