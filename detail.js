@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const carId = params.get("id");
 
-  const allCars = getCarDatabase(); // Lấy data từ data-manager
+  const allCars = getCarDatabase();
   const car = allCars[carId];
 
   if (car) {

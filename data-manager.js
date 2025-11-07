@@ -1,6 +1,4 @@
-// Dữ liệu gốc của bạn được chuyển vào đây
 const originalCarDatabase = {
-  // 3 xe đầu tiên chúng ta đã làm
   vios: {
     name: "Toyota Vios 1.5G",
     price: "530.000.000 VND",
@@ -75,7 +73,6 @@ const originalCarDatabase = {
     },
   },
   
-  // ----- DỮ LIỆU ĐƯỢC BỔ SUNG ĐẦY ĐỦ -----
   accent: {
     name: "Hyundai Accent 1.4 AT",
     price: "500.000.000 VND",
@@ -489,36 +486,24 @@ const originalCarDatabase = {
     },
   },
 };
-// ----- HẾT PHẦN BỔ SUNG DỮ LIỆU -----
 
 
 const STORAGE_KEY = 'auto69CarData';
 
-/**
- * Lưu toàn bộ cơ sở dữ liệu xe vào LocalStorage
- * @param {object} data - Đối tượng chứa tất cả xe
- */
+
 function saveCarDatabase(data) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
-/**
- * Lấy toàn bộ cơ sở dữ liệu xe
- * Sẽ ưu tiên lấy từ LocalStorage.
- * Nếu LocalStorage trống, sẽ lấy từ dữ liệu gốc và lưu vào LocalStorage.
- * @returns {object} Đối tượng chứa tất cả xe
- */
 function getCarDatabase() {
   let data = localStorage.getItem(STORAGE_KEY);
   
   if (!data) {
-    // Nếu không có gì trong storage, dùng dữ liệu gốc và lưu lại
     console.log("Không tìm thấy LocalStorage, đang dùng dữ liệu gốc.");
     data = originalCarDatabase;
     saveCarDatabase(data);
     return data;
   } else {
-    // Nếu có, dùng dữ liệu từ storage
     console.log("Đã tải dữ liệu từ LocalStorage.");
     return JSON.parse(data);
   }

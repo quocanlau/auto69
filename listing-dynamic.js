@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const carListContainerRow = document.querySelector(".car-listings .row");
-  
-  // ----- PHẦN 1: VẼ DANH SÁCH XE -----
+
   function renderCarList() {
     if (!carListContainerRow) {
       console.error("Không tìm thấy container .car-listings .row");
       return;
     }
-    
-    const carDb = getCarDatabase(); // Lấy dữ liệu từ data-manager.js
-    carListContainerRow.innerHTML = ""; // Xóa sạch các xe tĩnh (nếu có)
+
+    const carDb = getCarDatabase();
+    carListContainerRow.innerHTML = "";
 
     if (Object.keys(carDb).length === 0) {
-        carListContainerRow.innerHTML = "<p>Không có xe nào để hiển thị.</p>";
-        return;
+      carListContainerRow.innerHTML = "<p>Không có xe nào để hiển thị.</p>";
+      return;
     }
 
     for (const [id, car] of Object.entries(carDb)) {
@@ -43,14 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `;
-      carListContainerRow.insertAdjacentHTML('beforeend', cardHtml);
+      carListContainerRow.insertAdjacentHTML("beforeend", cardHtml);
     }
   }
-  
-  // Chạy hàm vẽ xe ngay lập tức
+
   renderCarList();
 
-  // ----- PHẦN 2: LOGIC LỌC TỪ FILE filter.js (ĐÃ DI CHUYỂN VÀO ĐÂY) -----
   const searchForm = document.querySelector(".search-bar form.row");
   const brandSelect = document.getElementById("brand");
   const priceSelect = document.getElementById("price");
@@ -60,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Lấy TẤT CẢ các thẻ xe MÀ CHÚNG TA VỪA VẼ RA
   const allCarCards = carListContainerRow.querySelectorAll(".col-md-4");
 
   const filterCars = () => {
@@ -84,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const cardPriceText = priceElement.textContent;
       const cardPrice = parseInt(cardPriceText.replace(/[^0-9]/g, ""));
 
-      // Kiểm tra hãng xe
       if (
         selectedBrand === "" ||
         selectedBrand === "tất cả hãng xe" ||
@@ -93,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
         brandMatches = true;
       }
 
-      // Kiểm tra giá
       if (
         selectedPriceRange === "" ||
         selectedPriceRange === "tất cả mức giá"

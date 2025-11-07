@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const carDb = getCarDatabase();
   const allCars = Object.entries(carDb);
-  
-  // Lấy 3 xe đầu tiên
+
   const featuredCars = allCars.slice(0, 3);
 
-  // --- 1. Nâng cấp "Xe nổi bật" (Carousel) ---
-  const carouselInner = document.querySelector("#featuredCarousel .carousel-inner");
-  const carouselIndicators = document.querySelector("#featuredCarousel .carousel-indicators");
+  const carouselInner = document.querySelector(
+    "#featuredCarousel .carousel-inner"
+  );
+  const carouselIndicators = document.querySelector(
+    "#featuredCarousel .carousel-indicators"
+  );
 
   if (carouselInner && carouselIndicators) {
     carouselInner.innerHTML = "";
@@ -15,21 +17,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     featuredCars.forEach(([id, car], index) => {
       const isActive = index === 0 ? "active" : "";
-      
-      // Thêm nút chỉ thị (indicator)
-      carouselIndicators.insertAdjacentHTML('beforeend', `
+
+      carouselIndicators.insertAdjacentHTML(
+        "beforeend",
+        `
         <button
           type="button"
           data-bs-target="#featuredCarousel"
           data-bs-slide-to="${index}"
           class="${isActive}"
-          aria-current="${isActive ? 'true' : 'false'}"
+          aria-current="${isActive ? "true" : "false"}"
           aria-label="Slide ${index + 1}"
         ></button>
-      `);
-      
-      // Thêm ảnh (slide)
-      carouselInner.insertAdjacentHTML('beforeend', `
+      `
+      );
+
+      carouselInner.insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="carousel-item ${isActive}">
           <img
             src="${car.images[0]}"
@@ -47,15 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
             >
           </div>
         </div>
-      `);
+      `
+      );
     });
   }
 
-  // --- 2. Nâng cấp "Xe Mới Về" ---
   const latestListingsRow = document.querySelector(".latest-listings .row");
 
   if (latestListingsRow) {
-    latestListingsRow.innerHTML = ""; // Xóa xe tĩnh
+    latestListingsRow.innerHTML = "";
 
     featuredCars.forEach(([id, car]) => {
       const cardHtml = `
@@ -69,7 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
             />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">${car.name}</h5>
-              <p class="card-text text-muted">${car.specs['Kiểu dáng'] || 'Sedan'} | ${car.year} | ${car.km}</p>
+              <p class="card-text text-muted">${
+                car.specs["Kiểu dáng"] || "Sedan"
+              } | ${car.year} | ${car.km}</p>
               <h5 class="card-text text-primary fw-bold mb-3">
                 ${car.price}
               </h5>
@@ -82,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `;
-      latestListingsRow.insertAdjacentHTML('beforeend', cardHtml);
+      latestListingsRow.insertAdjacentHTML("beforeend", cardHtml);
     });
   }
 });

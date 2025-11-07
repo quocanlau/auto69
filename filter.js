@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const filterCars = () => {
     const selectedBrand = brandSelect.value.toLowerCase();
-    const selectedPriceRange = priceSelect.value.toLowerCase(); // Giữ lại bản sửa lỗi
+    const selectedPriceRange = priceSelect.value.toLowerCase(); 
     let visibleCount = 0;
 
     allCarCards.forEach((cardCol) => {
@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const cardPriceText = priceElement.textContent;
       const cardPrice = parseInt(cardPriceText.replace(/[^0-9]/g, ""));
 
-      // Kiểm tra hãng xe
       if (
         selectedBrand === "" ||
         selectedBrand === "tất cả hãng xe" ||
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         brandMatches = true;
       }
 
-      // Kiểm tra giá
       if (
         selectedPriceRange === "" ||
         selectedPriceRange === "tất cả mức giá"
@@ -58,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         priceMatches = true;
       }
 
-      // **ĐÃ THAY ĐỔI:** Bỏ 'nameMatches'
       if (brandMatches && priceMatches) {
         cardCol.style.display = "block";
         visibleCount++;
@@ -80,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
       priceSelect.value = priceFromURL;
     }
 
-    // **ĐÃ THAY ĐỔI:** Bỏ 'nameFromURL'
     if (brandFromURL || priceFromURL) {
       filterCars();
     }
